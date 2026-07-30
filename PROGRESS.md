@@ -15,3 +15,15 @@
 - Done: Python 3.12 venv created, MCP 2.0.0 installed with all dependencies
 - Done: 5 skills reviewed — pipeline structure solid, dig/generate/review/polish/format all coherent
 - Next: Implement MCP server tools (replace stubs), test skills end-to-end
+
+## 2026-07-30 ~23:00 — Cleanup, pipeline tested, PDF/DOCX export added
+
+- Done: MCP server stub removed — skills handle everything natively, no Python server needed
+- Done: Redundant agents (resume-writer, ats-analyzer) removed — /review and /polish cover both
+- Done: /review → /polish → /format pipeline tested end-to-end against real resume + Optiver JD
+- Done: Section order fixed to 2025-2026 ATS consensus (Skills before Experience)
+- Done: Dual export: `scripts/export.sh` generates both PDF (weasyprint) and DOCX (pandoc)
+- Done: Output files at `output/resume.md`, `output/resume.pdf`, `output/resume.docx`
+- Verified: PDF text extraction clean, DOCX parsable, all content preserved
+- Next: Test /dig and /generate (only review→polish→format path tested so far)
+- Risk: /dig conversational flow is complex and untested against real user interaction
