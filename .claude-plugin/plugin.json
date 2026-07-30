@@ -1,0 +1,9 @@
+{
+  "name": "ai-for-resume",
+  "description": "AI-powered resume builder and analyzer for Claude Code. Includes skills for resume analysis, tailoring, and generation, plus specialized agents and an MCP server.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Tao ZHOU",
+    "email": "zhoutao1515@foxmail.com"
+  }
+}

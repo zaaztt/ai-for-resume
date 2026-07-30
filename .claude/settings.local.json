@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "resume-tools"
+  ],
+  "enableAllProjectMcpServers": true
+}
