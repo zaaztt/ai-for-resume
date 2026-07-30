@@ -1,2 +1,5 @@
-# MCP server dependencies
-mcp>=1.0.0
+# PDF parsing (for /dig and /review to extract text from PDF/DOCX resumes)
+pdfplumber>=0.11.0
+
+# PDF generation (for markdown → ATS-friendly PDF export)
+weasyprint>=63.0

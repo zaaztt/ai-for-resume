@@ -6,10 +6,9 @@ AI-powered resume toolkit for Claude Code — craft, analyze, and tailor resumes
 
 ```
 ai-for-resume/
-├── .mcp.json                  # MCP server config (resume-tools)
 ├── CLAUDE.md                  # This file — project instructions + session handover
 ├── README.md                  # Human-readable overview
-├── requirements.txt           # Python deps for MCP server
+├── requirements.txt           # Python deps (pdfplumber, weasyprint)
 ├── .claude/
 │   ├── settings.json          # Permissions
 │   ├── skills/                # 5-step resume pipeline
@@ -23,8 +22,12 @@ ai-for-resume/
 │       └── ats-analyzer.md    # @ats-analyzer — deep ATS analysis
 ├── .claude-plugin/
 │   └── plugin.json            # Plugin manifest
-└── mcp/
-    └── server.py              # MCP server (stub — needs implementation)
+├── scripts/
+│   ├── export-pdf.sh          # Markdown → ATS-friendly PDF
+│   └── resume.css             # PDF styling
+└── output/                    # User's generated resumes (gitignored)
+    ├── resume.md
+    └── resume.pdf
 ```
 
 ## 5-Skill Resume Pipeline
@@ -41,24 +44,27 @@ dig ──→ generate ──→ review ──→ polish ──→ format
 
 Each skill works standalone — jump in at any step.
 
-## Session Handover (2026-07-30)
+## Session Handover (2026-07-30 ~22:30)
 
 ### What Was Completed
 - [x] Project scaffolding with proper Claude Code extension structure
 - [x] 5-skill pipeline: dig, generate, review, polish, format
 - [x] 2 agents: resume-writer, ats-analyzer
-- [x] MCP server stub with 3 tools defined (parse_resume, analyze_jd, score_resume)
 - [x] Plugin manifest (.claude-plugin/plugin.json)
 - [x] SSH key configured for GitHub (id_ed25519_github, user: zaaztt)
+- [x] Git repo initialized and pushed to github.com/zaaztt/ai-for-resume
+- [x] README updated to reflect actual 5-skill pipeline
+- [x] Python venv with pdfplumber + weasyprint
+- [x] Markdown → PDF export tooling (scripts/export-pdf.sh + resume.css)
+- [x] MCP stub removed — skills handle everything natively, no Python server needed
+- [x] Pipeline tested: /review → /polish → /format → PDF with real resume (Optiver JD)
+- [x] Skills reviewed — all 5 are solid, pipeline flows correctly
 
 ### What Still Needs Doing
-- [ ] Implement MCP server tools (currently stubs)
-- [ ] Install Python deps: `python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
-- [ ] Initialize git repo: `git init && git add -A && git commit -m "Initial commit"`
-- [ ] Create GitHub repo and push
-- [ ] Test each skill end-to-end: `/dig`, `/generate`, `/review`, `/polish`, `/format`
-- [ ] Test agents: `@resume-writer`, `@ats-analyzer`
-- [ ] Consider adding more skills from ResumeSkills reference
+- [ ] Test /dig with a real conversational interview session
+- [ ] Test /generate from scratch (currently only tested review→polish→format path)
+- [ ] Test agents: @resume-writer, @ats-analyzer
+- [ ] Consider LaTeX template option for PDF (nicer typography, heavier dependency)
 - [ ] Package as npm-installable skill if desired
 
 ### Environment
