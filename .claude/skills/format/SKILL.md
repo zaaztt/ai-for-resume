@@ -135,12 +135,14 @@ City, State | email@example.com | linkedin.com/in/name | github.com/name
 
 ### Section Order
 
-**Default:** Header → Summary → Experience → Skills → Education → Projects → Certifications → Custom
+**Default (ATS-optimized, 2025–2026 consensus):** Header → Summary → Skills → Experience → Projects → Education → Certifications → Custom
+
+Rationale: Skills before Experience so ATS and recruiters hit keywords in the first 3-second scan. Projects above Education for experienced hires — show code ability before degrees.
 
 **Preserve original intent when:**
-- Academic CVs → Education before Experience
+- New grads → Education above Projects (still below Skills and Experience)
+- Academic CVs → Education before Experience (and before Skills)
 - Design resumes → Projects/Portfolio before Experience
-- New grads → Education high, Projects before Experience
 - Management roles → Summary longer, Experience most detailed
 
 **Fixed anchors:** Header is ALWAYS first, Summary is ALWAYS second (if present).
