@@ -17,9 +17,7 @@ ai-for-resume/
 │   │   ├── review/SKILL.md    # /review — Score & diagnose
 │   │   ├── polish/SKILL.md    # /polish — Optimize for target JD
 │   │   └── format/SKILL.md    # /format — Standardize markdown
-│   └── agents/                # Specialized sub-agents
-│       ├── resume-writer.md   # @resume-writer — content optimization
-│       └── ats-analyzer.md    # @ats-analyzer — deep ATS analysis
+│   └── agents/                # (empty — skills cover everything)
 ├── .claude-plugin/
 │   └── plugin.json            # Plugin manifest
 ├── scripts/
@@ -78,8 +76,3 @@ Each skill works standalone — jump in at any step.
 - STAR method (Situation, Task, Action, Result) for bullet points
 - Quantifiable achievements over generic descriptions
 - Match keywords from target JD when tailoring
-
-## Skills vs Agents
-
-- **Skills** (`/dig`, `/generate`, `/review`, `/polish`, `/format`): quick, single-step tasks
-- **Agents** (`@resume-writer`, `@ats-analyzer`): multi-step, deep analysis
